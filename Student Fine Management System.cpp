@@ -209,6 +209,8 @@ void cedit(){
         if(i->username == uname){
             i->username=cuname;
             i->password=cupass;
+            uname=cuname;
+	        upassword=cupass;
             cout<<"Edited Successfully\n";
             break;
         }
@@ -292,4 +294,5 @@ int main(){
             break;
     }
     return 0;
+
 }
