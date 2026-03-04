@@ -9,9 +9,6 @@ class Payment{
 class UserData{
     public:
         string username,password,role="student";
-        UserData(){
-            ;
-        }
 };
 vector<UserData*> users;
 vector<Payment*> payments;
@@ -27,7 +24,7 @@ void add_payment(){
     cin>>n->amount;
     int flag=0;
     for(auto i:users){
-        if( i->username == n->username ){
+        if( i->username == n->username && i->role == "student"){
             payments.push_back(n);
             flag=1;
             cout<<"Payment Added Successfully\n";
@@ -209,8 +206,6 @@ void cedit(){
         if(i->username == uname){
             i->username=cuname;
             i->password=cupass;
-            uname=cuname;
-	        upassword=cupass;
             cout<<"Edited Successfully\n";
             break;
         }
@@ -294,5 +289,4 @@ int main(){
             break;
     }
     return 0;
-
 }
